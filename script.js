@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 summary += `\nQ: ${question}\nA: ${answer}\n`;
             }
             addMessage(summary, 'bot');
+             feat/lawsuit-questionnaire-agent-with-notifications
             document.getElementById('submit-container').style.display = 'block';
             document.querySelector('.input-container').style.display = 'none';
         }
@@ -68,6 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
             addMessage("Sorry, there was a network error. Please check your connection and try again.", 'bot');
         } finally {
             document.getElementById('submit-container').style.display = 'none';
+
+        main
         }
     }
 
@@ -97,8 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+      feat/lawsuit-questionnaire-agent-with-notifications
     document.getElementById('submit-btn').addEventListener('click', submitData);
 
+
+        main
     // Hide the input container initially
     document.querySelector('.input-container').style.display = 'none';
 
