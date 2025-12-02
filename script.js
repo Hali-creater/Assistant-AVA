@@ -41,6 +41,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 summary += `\nQ: ${question}\nA: ${answer}\n`;
             }
             addMessage(summary, 'bot');
+             feat/lawsuit-questionnaire-agent-with-notifications
+            document.getElementById('submit-container').style.display = 'block';
+            document.querySelector('.input-container').style.display = 'none';
+        }
+    }
+
+    async function submitData() {
+        // IMPORTANT FOR OWNER: Replace the URL below with your unique Formspree URL.
+        const formspreeURL = "https://formspree.io/f/YOUR_UNIQUE_ID";
+
+        try {
+            const response = await fetch(formspreeURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userAnswers)
+            });
+
+            if (response.ok) {
+                addMessage("Thank you, your submission has been received.", 'bot');
+            } else {
+                addMessage("Sorry, there was an error submitting your answers. Please try again later.", 'bot');
+            }
+        } catch (error) {
+            addMessage("Sorry, there was a network error. Please check your connection and try again.", 'bot');
+        } finally {
+            document.getElementById('submit-container').style.display = 'none';
+
+        main
         }
     }
 
@@ -70,6 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+      feat/lawsuit-questionnaire-agent-with-notifications
+    document.getElementById('submit-btn').addEventListener('click', submitData);
+
+
+        main
     // Hide the input container initially
     document.querySelector('.input-container').style.display = 'none';
 
